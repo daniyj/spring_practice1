@@ -22,7 +22,7 @@ public class MvcController {
     public String student(Model model) {
         //html에서 Student객체 활용하도록 함
         model.addAttribute("object", new Student("yedi", "yedi@gmail.com"));
-        model.addAttribute("object2", new Student("bibi", "bibi@gmail.com"));
+//        model.addAttribute("object2", new Student("bibi", "bibi@gmail.com"));
         return "student";
     }
 

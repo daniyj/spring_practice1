@@ -6,10 +6,12 @@
 </head>
 <body>
 <!-- 데이터가 객체인경우 점(.)으로 접근한다. -->
-<p>이름 : [[${object.name}]]</p>
-<p>이메일 : [[${object.email}]]</p>
-<p>이름 : [[${object2.name}]]</p>
-<p>이메일 : [[${object2.email}]]</p>
+<div th:each="student: ${studentList}">
+    <p>이름 : [[${object.name}]]</p>
+    <p>이메일 : [[${object.email}]]</p>
+</div>
+
+
 
 </body>
 </html>
