@@ -49,4 +49,11 @@ public class MvcController {
         model.addAttribute("studentList", studentList);
         return "students";
     }
+    private int hitCount = 0;
+    @RequestMapping("/hits")
+    public String hits(Model model) {
+
+        model.addAttribute("hits",++hitCount);
+        return "hits";
+    }
 }

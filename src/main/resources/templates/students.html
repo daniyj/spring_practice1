@@ -6,7 +6,11 @@
 </head>
 <body>
 <!--each이용하여 Student객체 반복 -->
-<div th:each="student: ${studentList}">
+<div th:if="${studentList.isEmpty()}">
+    <p>No Students Here...</p>
+</div>
+
+<div th:unless="${studentList.isEmpty()}" th:each="student: ${studentList}">
   <p>이름 : [[${student.name}]]</p>
   <p>이메일 : [[${student.email}]]</p>
 </div>
