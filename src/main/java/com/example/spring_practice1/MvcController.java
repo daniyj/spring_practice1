@@ -4,6 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Arrays;
+import java.util.List;
+
 @Controller
 public class MvcController {
 
@@ -19,6 +22,21 @@ public class MvcController {
     public String student(Model model) {
         //html에서 Student객체 활용하도록 함
         model.addAttribute("object", new Student("yedi", "yedi@gmail.com"));
+        model.addAttribute("object2", new Student("bibi", "bibi@gmail.com"));
         return "student";
+    }
+
+    @RequestMapping("/is-logged-in")
+    public String isLoggedIn(Model model) {
+//        model.addAttribute("isLoggedIn", true);
+        model.addAttribute("isLoggedIn", false);
+        return "if-unless";
+    }
+
+    @RequestMapping("/each")
+    public String items(Model model) {
+        List<String> listOfStrings = Arrays.asList("foo", "bar", "baz");
+        model.addAttribute("itemList", listOfStrings);
+        return "each";
     }
 }

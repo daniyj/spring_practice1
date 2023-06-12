@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If Unless</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+<!--  로그인된 상태 isLoggedIn = true -->
+<div th:if="${isLoggedIn}">
+    <p>You are logged in</p>
+  </div>
+<!-- 로그인하지 않은 상태 isLoggedIn = false -->
+  <div th:unless="${isLoggedIn}">
+    <p>Please log in.</p>
+  </div>
+</body>
+</html>
