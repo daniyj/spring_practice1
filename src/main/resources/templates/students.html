@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+<!--each이용하여 Student객체 반복 -->
+<div th:each="student: ${studentList}">
+  <p>이름 : [[${student.name}]]</p>
+  <p>이메일 : [[${student.email}]]</p>
+</div>
+</body>
+</html>
