@@ -1,5 +1,6 @@
 package com.example.spring_practice1;
 
+import com.example.spring_practice1.service.LottoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,11 @@ import java.util.Random;
 
 @Controller
 public class MvcController {
+    private final LottoService lottoService;
+
+    public MvcController(LottoService lottoService) {
+        this.lottoService = lottoService;
+    }
 
     //RequestMapping메소드는 Model model 이라는 인자를 가지고 있습니다.
     @RequestMapping("/")
@@ -50,11 +56,11 @@ public class MvcController {
         model.addAttribute("studentList", studentList);
         return "students";
     }
-    private int hitCount = 0;
+//    private int hitCount = 0;
     @RequestMapping("/hits")
     public String hits(Model model) {
-
-        model.addAttribute("hits",++hitCount);
+        int hits = lottoService.addHit();
+        model.addAttribute("hits",hits);
         return "hits";
     }
     @RequestMapping("/lotto")
